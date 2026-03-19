@@ -1,4 +1,4 @@
-FROM php:8.4-fpm
+FROM php:8.5-fpm
 
 # Arguments defined in docker-compose.yml
 ARG user
@@ -29,7 +29,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN docker-php-ext-install curl pgsql pdo_pgsql pdo_mysql mbstring exif pcntl bcmath
 
 #=====xdebug
-RUN pecl install xdebug-3.4.1 \
+RUN pecl install xdebug-3.5.0 \
     && docker-php-ext-enable xdebug
 #=====xdebug
 
